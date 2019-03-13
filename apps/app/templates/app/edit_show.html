@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/edit_show.css' %}">
+    <meta charset="UTF-8">
+    <title>Edit show</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <h1><a href="/shows/{{show.id}}">{{show.name}}</a></h1>
+                <form action="/shows/{{show.id}}/update" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Title:</label>
+                        <input type="text" class="form-control" name="name" value="{{show.name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="network">Network:</label>
+                        <input type="text" class="form-control" name="network" value="{{show.network}}">
+                    </div>
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+                <br></br>
+                <form action="/shows/{{show.id}}/delete" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <div class="col-sm-5">
+                {% if messages %}
+                    {% for message in messages %}
+                        <h3>{{message}}</h3>
+                    {% endfor %}
+                {% endif %}    
+            </div>
+        </div>

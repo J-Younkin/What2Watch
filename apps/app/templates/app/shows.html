@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/shows.css' %}">  
+    <title>Shows</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Welcome, {{user.first_name}} {{user.last_name}}</h2>
+            <h3><a href="/logout">Logout</a></h3>
+        </div>
+            <br></br><br></br>
+        <h3>TV Shows</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Show</th>
+                    <th>Network</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for show in shows %}
+                <tr>
+                    <td><a href="/shows/{{show.id}}">{{show.name}}</a></td>
+                    <td>{{show.network}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br></br>
+        <h3><a href="shows/new">Add a show</a></h3>
+        <br></br>
+        <h3>{{user.first_name}}'s Ratings</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Show</th>
+                    <th>Stars</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rating in ratings %}
+                <tr>
+                    <td><a href="/shows/{{rating.show.id}}">{{rating.show.name}}</a></td>
+                    <td>{{rating.rating}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
