@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'app/index.html', context)
 
 def create_user(request):
-    print(request.POST)
+    # print(request.POST)
     request.session['errors'] = []
     data_is_valid, errors = User.objects.validate(request.POST)
     print ('data is valid',data_is_valid)

@@ -1,3 +1,39 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
 li {
     color: red;
 }
+
+.lead {
+    color: #6C757D;
+}
+
+#regCon {
+    background: #8BD8E0;
+    border-radius: 5px;
+    color: white;
+}
+
+#logCon {
+    background: #8BD8E0;
+    border-radius: 5px;
+    color: white;
+}
+
+#jumbo{
+    background-image: url("https://www.bandt.com.au/information/uploads/2019/02/iStock-997124740-1260x840.jpg");
+    background-repeat: no-repeat;
+    background-color: #8BD8E0;
+    min-height: 280px;
+}
+
+#brand {
+    font-weight: 750;
+}
+
+.form-control:focus {
+    border-color: #7c7c7c;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 124, 124, 0.6);
+  }
