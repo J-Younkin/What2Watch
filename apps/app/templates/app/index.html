@@ -17,120 +17,125 @@
 <body>
     <div id="jumbo" class="jumbotron jumbotron-fluid text-white">
         <div class="container">
-            <h1 class="display-4" id="brand">What 2 Watch</h1>
-            <p class="lead">Building a community of T.V. fans
+            <h1 class="display-4 ml-4" id="brand">What 2 Watch</h1>
+            <p class="lead ml-4">Building a community of T.V. fans
             <br>so you always know what to watch.</p>
         </div>
     </div>        
-    <div class="container mt-5 p-3">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-lg-6 mb-3">
+            <div class="col-lg-5">
                 <div class="container border" id="regCon">
-                    <h2 class="ml-3 my-5 text-center">New User? <span class="h5 text-muted">register below</span></h2>
+                    <h2 class="my-4 text-center">New User? <span class="h5 text-muted">register below</span></h2>
                     <hr class="mb-5">
                     <form action="/create" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label class="control-label ml-3" for="first_name">First Name</label>
-                            <div class="col-8">
-                                <input type="text" class="form-control" name="first_name">
+                            <div class="col-8 offset-2">
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name">
                             </div>
                         </div>
                         <div class="row">
-                            <ul>
-                                {% for e in errors %}
-                                    {% if e.label == "first_name" %}
-                                        <li>{{e.message}}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <div class="col">
+                                <ul>
+                                    {% for e in errors %}
+                                        {% if e.label == "first_name" %}
+                                            <li>{{e.message}}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label ml-3" for="last_name">Last Name</label>
-                            <div class="col-8">
-                                <input type="text" class="form-control" name="last_name">
+                            <div class="col-8 offset-2">
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="row">
-                            <ul>
-                                {% for e in errors %}
-                                    {% if e.label == "last_name" %}
-                                        <li>{{e.message}}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <div class="col">
+                                <ul>
+                                    {% for e in errors %}
+                                        {% if e.label == "last_name" %}
+                                            <li>{{e.message}}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label ml-3" for="email">Email</label>
-                                <div class="col-8"> 
-                                    <input type="text" class="form-control" name="email">
+                                <div class="col-8 offset-2"> 
+                                    <input type="text" class="form-control" name="email" placeholder="Email">
                                 </div>
                         </div>
                         <div class="row">
-                            <ul>
-                                {% for e in errors %}
-                                    {% if e.label == "email" %}
-                                        <li>{{e.message}}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <div class="col-8 offset-2">
+                                <ul>
+                                    {% for e in errors %}
+                                        {% if e.label == "email" %}
+                                            <li>{{e.message}}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label ml-3" for="pwd">Password</label>
-                                <div class="col-8"> 
-                                    <input type="password" class="form-control" name="password">
+                                <div class="col-8 offset-2"> 
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                         </div>
                         <div class="row">
-                            <ul>
-                                {% for e in errors %}
-                                    {% if e.label == "password" %}
-                                        <li>{{e.message}}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <div class="col">
+                                <ul>
+                                    {% for e in errors %}
+                                        {% if e.label == "password" %}
+                                            <li>{{e.message}}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label ml-3" for="pwd">Confirm Password</label>
-                                <div class="col-8"> 
-                                    <input type="password" class="form-control" name="confirm">
-                                </div>
+                            <div class="col-8 offset-2"> 
+                                <input type="password" class="form-control" name="confirm" placeholder="Confirm Password">
+                            </div>
                         </div>
                         <div class="row">
-                            <ul>
-                                {% for e in errors %}
-                                    {% if e.label == "confirm" %}
-                                        <li>{{e.message}}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <div class="col-8 offset-2">
+                                <ul>
+                                    {% for e in errors %}
+                                        {% if e.label == "confirm" %}
+                                            <li>{{e.message}}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                         <div class="form-group"> 
-                            <div class="col-sm-offset-2 col-sm-10 mb-5">
-                                <button type="submit" class="btn btn-lg btn-secondary">Register</button>
+                            <div class="col-8 offset-2 mb-5">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block ">Register</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5 offset-2">
                 <div class="container border" id="logCon">
-                    <h2 class="ml-3 my-5 text-center">Login</h2>
+                    <h2 class="my-4 text-center">Login</h2>
                     <hr class="mb-5">
-                    <form class="form-horizontal" action="/login" method="POST">
+                    <form action="/login" method="POST">
                         {%csrf_token%}
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email</label>
-                            <div class="col-8"> 
-                                <input type="text" class="form-control" name="email">
+                            <div class="col-8 offset-2"> 
+                                <input type="text" class="form-control" name="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="pwd">Password</label>
-                            <div class="col-8"> 
-                                <input type="password" class="form-control" name="password">
+                            <div class="col-8 offset-2"> 
+                                <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
-                            <div class="row">
+                        </div>
+                        <div class="row">
+                            <div class="col-8 offset-2">
                                 <ul>
                                     {% for e in errors %}
                                         {% if e.label == "login" %}
@@ -141,10 +146,11 @@
                             </div>
                         </div>
                         <div class="form-group"> 
-                            <div class="col-sm-offset-2 col-sm-10 mb-5">
-                                <button type="submit" class="btn btn-lg btn-secondary">Login</button>
+                            <div class="col-8 offset-2 mb-4">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Login</button>
                             </div>
                         </div>
+                        <h5 class="text-center mb-5">Not a member? <a class="text-secondary" href="#">Register</a></h5>
                     </form>
                 </div>
             </div>
